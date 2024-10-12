@@ -1,0 +1,41 @@
+Node: Get Artist
+URL: https://api.spotify.com/v1/artists/{id}
+Opis: Podaje podstawowe informacje o artyście na podstawie jego id
+Informacje:
+    - Liczba folowersów
+    - Gatunki
+    - Imię
+    - Popularność (0 - 100)
+    - Spotify uri (Zawiera m.in. ID)
+    - Podzasób Get Artist's Albums:
+        - URL: https://api.spotify.com/v1/artists/{id}/albums
+        - Opis: Zwraca wszystkie albumy artysty
+        - Informacje:
+            - Typ (album, single, Compilation)
+            - Ilośc utworów
+            - ID albumu (Na jego podsawie można odwołać się do zasobu z albumami)
+            - Nazwa
+            - Data wydania
+            - Informacje o artystach (ID, Imię, typ, Spotify uri)
+    - Podzasób Get Artist's Top Tracks:
+        - URL: https://api.spotify.com/v1/artists/{id}/top-tracks
+        - Opis: Zwraca najpopularniejsze utwory artysty
+        - Informacje:
+            - Artyści (ID, Imię, Typ, Spotify uri)
+            - Numer płyty (zazwyczaj 1, chyba że album ma więcej niż jedną płytę)
+            - Czas trwania w ms
+            - Czy ma przekleństwa
+            - ID utworu (Na jego podstawie można odwołać się do zasobu z utworami)
+            - Czy można ją odsłuchać
+            - Nazwa utworu
+            - Popularność (0 - 100)
+            - Numer utworu na albumie
+    - Podzasób Get Arist's Related artists:
+        - URL: https://api.spotify.com/v1/artists/{id}/related-artists
+        - Opis: Zwraca listę podobnych artystów na podstawie analiz Spotify na podstawie histori słuchania użytkowników
+        - Informacje:
+            - Libcza folowersów
+            - Gatunki
+            - ID artysty
+            - Imię
+            - Popularność (0 - 100)

@@ -1,8 +1,0 @@
-Node: Get Artist
-URL: https://api.spotify.com/v1/artists/{id}
-Opis: Podaje podstawowe informacje o artyście na podstawie jego id
-Informacje:
-    - Liczba folowersów
-    - Gatunki
-    - Imię
-    - Popularność

@@ -1,0 +1,11 @@
+Node: Search for Item
+URL: https://api.spotify.com/v1/search
+Opis: Przeszukaj katalog spotify pod kątem konkretnego wyszukania
+Kluczowe argumenty:
+    - q (Querry, czyli zapytanie. Można uwzględnić następujące filtry: album, artist, track, year, upc)
+    - Type (Czego szukamy: Album, Artist, Playlist, Track, Show, Episode)
+    - Limit (Nie jest wymagany. 0 - 50)
+Informacje:
+    - Zalżnie od typu szukanego elementu. Patrz inne pliki
+
+

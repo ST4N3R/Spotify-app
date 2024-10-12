@@ -1,0 +1,13 @@
+Node: Get Album
+URL: https://api.spotify.com/v1/albums/{id}
+Opis: Podaje podstawowe informacje o albumie
+Informacje:
+    - Typ (Album, Single, Compilation)
+    - Liczba utworów
+    - ID
+    - Nazwa
+    - Data wydania
+    - Artyści (ID, Imię, Spotify uri)
+    - Utwory (Limit elementów, link do kolejnej strony, Lista utworów (Artyści, Czas trwania w ms, Czy są przekleństwa, ID, Nazwa)) - jest bardzo długie, więc trzeba ograniczać
+    - Prawa autorskie
+    - Gatunki

@@ -1,0 +1,45 @@
+Node: Get Track
+URL: https://api.spotify.com/v1/tracks/{id}
+Opis: Podaje podstawowe informacje o albumie
+Informacje:
+    - Informacje o albumie
+    - Informacje o artyście
+    - Numer płyty (zazwyczaj 1, chyba że album ma więcej niż jedną płytę)
+    - Czas trwania w ms
+    - Czy ma przekleństwa
+    - ID utworu (Na jego podstawie można odwołać się do zasobu z utworami)
+    - Czy można ją odsłuchać
+    - Nazwa utworu
+    - Popularność (0 - 100)
+    - Numer utworu na albumie
+    - Podzbiór Get Track's Audio Features:
+        - URL: https://api.spotify.com/v1/audio-features/{id}
+        - Opis: Podaje cechy utworu nadane przez Spotify
+        - Informacje:
+            - Akustyczność (0 - 100; Jak bardzo aktustyczny jest to utwór)
+            - analysis_url (link do pełnej analizy utworu)
+            - Tańcowalność (XD) (0 - 100; Jak bardzo nadający się do tańczenia jest to utwór)
+            - Czas trwania w ms
+            - Energiczność (0 - 100; Jak szybkie, głośne i energiczne są to piosenki)
+            - ID
+            - Instrumentalność (0 - 100; Jak duża część utworu, to instrumenty, czyt: 100 nie ma w ogóle tekstu)
+            - Tonacja
+            - Liveness (0 - 100; Jak duże jest prawdopodobieństwo, że jest to nagrany utwór z koncertu)
+            - Głośność (Wartość w decybelach)
+            - Modus (Coś z muzyki)
+            - Słowność (0 - 100; 66 - 100 -> tylko słowa; 33 - 66 -> normalna muzyka; 0 - 33 -> brak słów)
+            - Tempo (Beats per minute)
+            - Time_signature (Coś z muzyki)
+    - Podzbiór Get Recommendations:
+        - URL: https://api.spotify.com/v1/recommendations
+        - Opis: Podaje rekomendowany utwór na bazie algorytmu Spotify
+        - Kluczowe argumenty:
+            - Limit (Ogranicza liczbę wyników)
+            - Seed_artist (ID artysty)
+            - Seed_genres (Gatunek)
+            - Seed_tracks (ID piosenki)
+            - Powyższe trzy argumenty mogą być wymiennie stosowane, ale maksymalnie 5 wpisów można podać. Przynajmniej jeden z nich jest wymagany
+            - Możliwe jest podanie każdego argumentu z Get Track's Audio Features w wersji jako min oraz max
+        - Informacje:
+            - seed (Informacje o danym seedzie, jego ID, ilość piosenek po zastosowaniu filtrów z Get Track's Audio Features oraz filtrów lokalizacyjnych)
+            - Informacje o utworze (Patrz Get Track)

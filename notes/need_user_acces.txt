@@ -1,0 +1,48 @@
+Node: Get User's Saved Albums
+URL: https://api.spotify.com/v1/me/albums
+Opis: Podaje zapisane albumy dla użytkownika
+Informacje:
+    - Typ (Album, Single, Compilation)
+    - Liczba utworów
+    - ID
+    - Nazwa
+    - Data wydania
+    - Artyści (ID, Imię, Spotify uri)
+    - Utwory (Limit elementów, link do kolejnej strony, Lista utworów (Artyści, Czas trwania w ms, Czy są przekleństwa, ID, Nazwa)) - jest bardzo długie, więc trzeba ograniczać
+    - Prawa autorskie
+    - Gatunki
+    - Podzbiór Check User's Saved Albums:
+        - URL: https://api.spotify.com/v1/me/albums/contains
+        - Opis: Sprawdza czy użytkownik ma zapisany dany album
+        - Wymagane argumenty:
+            - ID albumu
+        - Informacje:
+            - Zwraca tylko True lub False
+
+
+Node: Get User's Saved Tracks
+URL: https://api.spotify.com/v1/me/tracks
+Opis: Pobierz zapisane utwory. Są one jednoznaczne z playlistą polubionych utworów
+Informacje:
+    - Kiedy został dodany
+    - Informacje o piosence:
+        - Album
+        - Artyści (ID, Imię, Typ, Spotify uri)
+        - Numer płyty (zazwyczaj 1, chyba że album ma więcej niż jedną płytę)
+        - Czas trwania w ms
+        - Czy ma przekleństwa
+        - ID utworu (Na jego podstawie można odwołać się do zasobu z utworami)
+        - Czy można ją odsłuchać
+        - Nazwa utworu
+        - Popularność (0 - 100)
+        - Numer utworu na albumie
+
+
+Node: Get User's Top Items
+URL: https://api.spotify.com/v1/me/top/{type}
+Opis: Pobierz najczęściej słuchanych artystów lub utwory na podstawie historii słuchania użytkownika
+Kluczowe argumenty:
+    - Typ (artists lub tracks)
+    - time_range (long_term - rok, medium_term - pół roku, short_term - miesiąc)
+Informacje:
+    - Lista utowrów lub artystów posortowana od najczęściej słuchany do najmniej
