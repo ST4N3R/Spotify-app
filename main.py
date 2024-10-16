@@ -26,7 +26,7 @@ def callback():
     items = top_tracks['items']
     next_url = top_tracks['next']
 
-    with open("data/data.json", "w") as json_file:
+    with open("data/data_artists.json", "w") as json_file:
         json.dump(items, json_file, indent=4)
 
     return top_tracks

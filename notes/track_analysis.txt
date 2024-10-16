@@ -1,0 +1,17 @@
+'album' - just for aditinal analysis (image, name, spotify_uri, artists(foreign key)). Should be an another table, tracks should have foreign key to album
+'artists' - just for aditional analysis (name, spotiffy_uri). Should be an another table
+'available_markets' - drop
+'disc_number' - drop
+'duration_ms' - might be useful when analysing tracks
+'explicit' - might be useful when
+'external_ids' - drop
+'external_urls' - drop
+'href' - keep unchanged
+'id' - keep unchanged
+'is_local' - drop
+'name' - keep
+'popularity' - keep
+'preview_url' - keep
+'track_number' - drop
+'type' - drop
+'uri' - keep
