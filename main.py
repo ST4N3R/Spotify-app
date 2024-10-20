@@ -17,9 +17,11 @@ def home():
 #TO DO: Następnie powinien przesyłać dane do Azure i obrabiać je
 @app.route('/callback/')
 def callback():
-    auth_code = request.args.get('code')
+    auth_code = request.args.get('code')    #Pobiera auth_code
     
-    access_token = get_access_token(auth_code)
+    res_access_token = get_access_token(auth_code)
+    access_token = res_access_token['access_token']
+    refresh_token = res_access_token['refresh_token']
     
     top_tracks = get_user_top_items(access_token, item_type='tracks', time_range='long_term')
 

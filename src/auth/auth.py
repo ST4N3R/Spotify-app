@@ -2,7 +2,7 @@ import requests
 from urllib.parse import urlencode
 from ..config.config import CLIENT_ID, CLIENT_SECRET_ID, REDIRECT_URI, SCOPES
 
-def get_authorization_url():
+def get_authorization_url() -> str:
     """Generates authentication url (that is required to generate authentication code) for given scopes
 
     Returns:
@@ -20,7 +20,7 @@ def get_authorization_url():
     return f"{auth_url}?{urlencode(params)}"
 
 
-def get_access_token(auth_code):
+def get_access_token(auth_code: str):
     """Generates access token for a given authentication code
 
     Args:
@@ -42,4 +42,18 @@ def get_access_token(auth_code):
         'client_secret': CLIENT_SECRET_ID
     }
     response = requests.post(token_url, headers=headers, data=data)
-    return response.json()['access_token']
+    return response.json()
+
+
+def get_new_access_token(refresh_token: str):
+    token_url = 'https://accounts.spotify.com/api/token'
+    headers = {
+        "Content-Type": "application/x-www-form-urlencoded",
+    }
+    data = {
+        'grant_type': 'refresh_token',
+        'refresh_token': refresh_token,
+        'client_id': CLIENT_ID
+    }
+    response = requests.post(token_url, headers=headers, data=data)
+    return response.json()
